@@ -1,0 +1,18 @@
+Dataset task instruction: {{INSTRUCTION_JSON}}
+
+In this single CURRENT image, locate visible regions for all four roles in ONE response.
+Infer task objects and destinations only from the dataset instruction and the current image; no predefined object list is supplied.
+
+source: objects or object parts being manipulated or whose state is changed by the task. If already held, locate the currently held object, not its former location or a similar distractor.
+goal: a visible task destination, receptacle, target surface, or interaction target. Omit this role when the task has no separate visible target; do not invent a destination.
+arm: visible robot manipulator links and joints, excluding the end effector and held objects.
+gripper: the visible physical end effector, including its palm/base, fingers, jaws, or suction tool. Exclude long arm links, camera housing, and the object being held.
+
+Include identifiable partial or occluded regions, including a single visible finger. Do not require a complete gripper, a particular robot appearance, or any fixed up/down orientation.
+Use separate tight boxes for disconnected visible regions; multiple boxes with the same role are allowed. Omit absent or unidentifiable regions and do not label image padding or hidden parts.
+
+Return ONLY a JSON array of objects with role and bbox:
+[{"role":"gripper","bbox":[100,200,300,400]}]
+Allowed roles: source, goal, gripper, arm. Each object has only ONE bbox key.
+Coordinates are four integers [x_min,y_min,x_max,y_max], normalized to 0..1000 in this full image.
+Return [] only if none of the four roles can be identified.

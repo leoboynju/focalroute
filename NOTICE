@@ -1,0 +1,21 @@
+FocalRoute
+
+This research fork is based on OpenPI by Physical Intelligence:
+https://github.com/Physical-Intelligence/openpi
+Base revision: 15a9616a00943ada6c20a0f158e3adb39df2ccac
+
+Changes include prompt-conditioned visual routing, optional valid-camera
+masking, sparse Hard-label supervision, topology-aware checkpoints,
+original-position RoPE, full LLM and Action Expert fine-tuning, and
+device-specific PyTorch execution support.
+
+The source retains the Apache License 2.0 in LICENSE. Gemma-related terms
+are retained in LICENSE_GEMMA.txt. Referenced Git submodules and external
+dependencies remain subject to their own licenses; linking or referencing
+them does not relicense them.
+
+Model weights, datasets, pseudo-labels, recordings, compiled engines,
+machine-specific operations, and access credentials are not distributed
+with this source release. Obtain external assets from their authors under
+their applicable terms. This fork is not an official Physical Intelligence
+release or endorsement.
